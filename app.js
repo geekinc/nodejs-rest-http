@@ -32,6 +32,8 @@ app.use('/', express.static(path.join(__dirname, 'public')));
 
 app.use('/api/greeting', (request, response) => {
   const name = request.query ? request.query.name : undefined;
+  console.log('Greeting Endpoint Called');
+  console.log(request);
   response.send({ content: `Greetings, ${name || 'World!'}` });
 });
 
